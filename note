@@ -1,0 +1,166 @@
+NPM(Node Package Module)
+---
+*   version find node -v
+*   npm -v
+*   node tool is npm.
+
+
+
+Back-end
+--------
+* in front language is ts and back end js, so 
+* database can be used to store data.
+* server is used to manage the data in db.
+*   database    (Mongo db)
+SERVER
+-------
+* server{node(express frame work)}
+* server side technology is node
+* data passed to server using api 
+    Api
+    ---
+    >> https request
+    >> header contain Secret data and body contain json data.
+    >> when bank front call api that come to index.js file in back end.
+
+
+Create package.json
+--------------------
+* syntax :- npm init
+Install express frame work
+--------------------------
+* syntax :- npm i express (express is a framework of node)
+When a data transfer from front to back end using API(Appln Pgm Interface).
+
+https
+-----
+*   Two part exist Header and Body
+    ->  Header exist screat data.
+    ->  Body
+        ----
+        =>body data in JSON format. 
+request types
+--------------
+POST    -  To send datas              Register
+GET     -  To access the data          Login
+PUT     -  Complete updation           Change full account details
+PATCH   -  Partial updation            deposit / withdraw
+DELETE  -  To delete datas             delete account
+
+server response Status code
+------
+*   200 -   Sucess
+*   400 -   Client side Errors
+*   500 -   internet error/server side error
+*   100 -   pass Information message ,eg:- alert
+*   300 -   Redirection
+
+SERVER CREATION STEPS
+----------------------
+1. import express
+2. create a app using express.
+3. Run the app using a port number, so set the port number (port number 3000)
+4. resolve http requests.
+
+NODE
+----
+* At a time manage many requests / asynchronously manage the resquests.
+* javascript complier is node.
+index.js
+--------
+* 
+    const express = require("express")
+                                |
+                                |
+                            express is a key from package.json
+nodemon
+-------
+* syntax :- npm i -g nodemon (for global ,then run command :- nodemon index.js )
+* syntax :- npm i nodemon (then run command :- npx nodemon index.js )
+* server run using node, but recomplilation not possible.so we use nodemon.
+
+PHP
+---
+* At time only one resource can be mangae
+
+
+Method use in index.js
+----------------------
+* app.use(express.json()) => used to convert  all request datas from json(in body exist data) to javascript.
+* res.status(result.statusCode).json(result) => .json(result) is convert (js to json) and send the data as response.
+* status(statusCode) - change the response code as status Code.
+
+
+TOKEN IN SERVER
+---------------
+JWT TOCKEN - json web tocken
+install
+    - npm install jsonwebtoken
+            >> jsonwebtocken library used.
+            >> sign() method used to generate jwt tocken.
+            >> verify() method used to verify json web tocken.
+TOCKEN VERIFICATION
+-------------------
+* tocken verification can do using middlewares
+* middlewares have the capacity to cntrl server request.
+* three argument exist
+    1. request
+    2. response
+    3. next
+* Two type middleware
+    1. Application specific middleware
+        * work before all request.
+    2. Router specific middleware
+        * can apply to specific request in server.
+
+how to solve run time error
+---------------------------
+* try expect
+    >> try-catch
+        >>> try block exist - error causing code(that means chanace to come a error code places this place )
+        >>> catch - error code
+
+                                            MONGO DB
+                                            --------
+
+* collection name must plural
+    eg:- users
+shell command
+--------------
+- show dbs      - to see db
+- use db_name    - to open db
+- show collections - to see collection inside db
+- db.collection_name.find()  - to read all data in collection
+- db.collection_name.findOne({acno:1000}) - to read single data
+- db.collection_name.insertOne({"acno":1001,"name":"ammu",...}) - create new data
+- db.collection_name.find({balance:{gt:45000}})  - to check balance is greater than 45000.
+- db.collection_name.deleteOne({"uname":"ammu"}) - used to delete
+- db.collection_name.updateOne({"uname":"ammu"},{$set:{uname:anu v}}) - used to update data
+
+CRED
+                                SERVER DB INTEGRATION
+                                ---------------------
+db - 27017
+server - 3000
+mongoose - used to server mdb integration
+install - npm i mongoose.
+
+steps
+-----
+1. import mongoose
+2. state a connection string to integrate
+3. define a model for our collection(to show data look and behave )
+
+INSTALL CORS
+------------
+* Syntax:- npm i cors
+Params
+--------
+data passed throught request.
+eg:-http://localhost:3000/delete/1000
+                                   |
+                                params
+
+
+after build running code
+npm i -g http-server
